@@ -1,4 +1,4 @@
 <h1>I'm trips index</h1>
 <ul ng-repeat="trip in tripsIndex.all">
-<li>{{ trip.name }}, departure on {{ trip.departure }} for {{ trip.numberOfDays }}</li>
+<li>{{ trip.name }}, departure on {{ trip.departure }} for {{ trip.numberOfDays }} days</li><a ui-sref="tripsShow({ id: trip.id })">View me</a>
 </ul>
