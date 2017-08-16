@@ -8,6 +8,13 @@ function indexTripRoute(req, res, next){
     .catch(next);
 }
 
+function createTripRoute(req, res, next){
+  Trip
+  .create(req.body)
+  .then((trip) => res.status(201).json(trip))
+  .catch(next);
+}
 module.exports = {
-  indexTripRoute
+  indexTripRoute,
+  createTripRoute
 };

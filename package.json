@@ -1,7 +1,7 @@
 {
   "name": "wdi-project-3",
   "version": "1.0.0",
-  "description": "WDI Project 3",
+  "description": "Trip Planner",
   "main": "index.js",
   "scripts": {
     "start": "node index",
