@@ -10,13 +10,16 @@ Trip.collection.drop();
 Trip
   .create([{
     name: 'India',
-    numberOfDays: 21
+    departure: new Date(),
+    numberOfDays: 2
   },{
     name: 'Russia',
-    numberOfDays: 14
+    departure: new Date(),
+    numberOfDays: 3
   },{
     name: 'Taiwan',
-    numberOfDays: 7
+    departure: new Date(),
+    numberOfDays: 4
   }])
   .then((trips) => {
     console.log(`${trips.length} trips created!`);
