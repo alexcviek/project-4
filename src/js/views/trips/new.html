@@ -1,24 +1,27 @@
 <h1>new trip</h1>
-<!-- <form class="col-lg-4" ng-submit="foodBanksNew.create()" name="foodBanksNew.foodBankForm" novalidate>
+<form ng-submit="tripsNew.create()" name="tripsNew.tripNewForm" novalidate>
   <div class="form-group">
     <label for="name">Name</label>
-    <input class="form-control" type="text" id="name" name="name" ng-model="foodBanksNew.foodBank.name" required>
-    <div ng-messages="foodBanksNew.foodBankForm.name.$error" ng-show="foodBanksNew.foodBankForm.$submitted || foodBanksNew.foodBankForm.name.$touched">
+    <input class="form-control" type="text" id="name" name="name" ng-model="tripsNew.trip.name" required>
+    <div ng-messages="tripsNew.tripNewForm.name.$error" ng-show="tripsNew.tripNewForm.$submitted || tripsNew.tripNewForm.name.$touched">
       <div ng-message="required">Name is required.</div>
     </div>
   </div>
   <div class="form-group">
-    <label for="location">Location</label>
-    <input autocomplete type="text" class="form-control" location="foodBanksNew.foodBank.location" ng-model="foodBanksNew.foodBank.address" name="location" required>
-    <div ng-messages="foodBanksNew.foodBankForm.location.$error" ng-show="foodBanksNew.foodBankForm.$submitted || foodBanksNew.foodBankForm.location.$touched">
-      <div ng-message="required">Location is required.</div>
+    <label for="departure">Departure</label>
+    <input class="form-control" type="date" id="departure" name="departure" ng-model="tripsNew.trip.departure" required>
+    <div ng-messages="tripsNew.tripNewForm.departure.$error" ng-show="tripsNew.tripNewForm.$submitted || tripsNew.tripNewForm.departure.$touched">
+      <div ng-message="required">Departure date is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="numberOfDays">Number of Days</label>
+    <input class="form-control" type="number" id="numberOfDays" name="numberOfDays" ng-model="tripsNew.trip.numberOfDays" required>
+    <div ng-messages="tripsNew.tripNewForm.numberOfDays.$error" ng-show="tripsNew.tripNewForm.$submitted || tripsNew.tripNewForm.numberOfDays.$touched">
+      <div ng-message="required">Number of days is required.</div>
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="url">Url:</label>
-    <input type="text" class="form-control" id="url" name="url" ng-model="foodBanksNew.foodBank.url">
-  </div>
   <button type="submit" class="btn btn-default">Submit</button>
 
-</form> -->
+</form>
