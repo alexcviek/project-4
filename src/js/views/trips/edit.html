@@ -1,0 +1,27 @@
+<h1>new trip</h1>
+<form ng-submit="tripsEdit.update()" name="tripsEdit.tripEditForm" novalidate>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input class="form-control" type="text" id="name" name="name" ng-model="tripsEdit.trip.name" required>
+    <div ng-messages="tripsEdit.tripEditForm.name.$error" ng-show="tripsEdit.tripEditForm.$submitted || tripsEdit.tripEditForm.name.$touched">
+      <div ng-message="required">Name is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="departure">Departure</label>
+    <input class="form-control" type="date" id="departure" name="departure" ng-model="tripsEdit.trip.departure" required>
+    <div ng-messages="tripsEdit.tripEditForm.departure.$error" ng-show="tripsEdit.tripEditForm.$submitted || tripsEdit.tripEditForm.departure.$touched">
+      <div ng-message="required">Departure date is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="numberOfDays">Number of Days</label>
+    <input class="form-control" type="number" id="numberOfDays" name="numberOfDays" ng-model="tripsEdit.trip.numberOfDays" required>
+    <div ng-messages="tripsEdit.tripEditForm.numberOfDays.$error" ng-show="tripsEdit.tripEditForm.$submitted || tripsEdit.tripEditForm.numberOfDays.$touched">
+      <div ng-message="required">Number of days is required.</div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-default">Submit</button>
+
+</form>
