@@ -7,9 +7,8 @@ router.route('/trips')
 
 router.route('/trips/:id')
   .get(tripsController.showTripRoute)
+  .put(tripsController.updateTripRoute)
   .delete(tripsController.deleteTripRoute);
 
-router.route('/trips/:id/edit')
-  .put(tripsController.updateTripRoute);
 
 module.exports = router;
