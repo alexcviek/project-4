@@ -1,3 +1,5 @@
-<h1>{{ tripsShow.trip.name }}</h1>
+<h2>{{ tripsShow.trip.name }}</h2>
+<p>{{ tripsShow.trip.departure }}</p>
+<p>{{ tripsShow.trip.numberOfDays }}</p>
 <button ng-click="tripsShow.delete()">Delete</button>
 <button ui-sref="tripsEdit({ id: tripsShow.trip.id })">Edit</button>

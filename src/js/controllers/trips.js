@@ -2,7 +2,8 @@ angular
 .module('tripApp')
 .controller('TripIndexCtrl', TripIndexCtrl)
 .controller('TripShowCtrl', TripShowCtrl)
-.controller('TripNewCtrl', TripNewCtrl);
+.controller('TripNewCtrl', TripNewCtrl)
+.controller('TripEditCtrl', TripEditCtrl);
 
 TripIndexCtrl.$inject = ['Trip'];
 function TripIndexCtrl(Trip) {
@@ -42,4 +43,26 @@ function TripNewCtrl($state, Trip){
     }
   }
   vm.create = tripCreate;
+}
+
+TripEditCtrl.$inject = ['Trip', '$stateParams', '$state'];
+function TripEditCtrl(Trip, $stateParams, $state) {
+  const vm = this;
+
+  Trip.get($stateParams)
+    .$promise
+    .then((trip) => {
+      vm.trip = trip;
+      vm.trip.departure = new Date(vm.trip.departure);
+    });
+
+  function tripsUpdate() {
+    if (vm.tripEditForm.$valid) {
+      vm.trip
+        .$update()
+        .then(() => $state.go('tripsIndex'));
+    }
+  }
+
+  vm.update = tripsUpdate;
 }
