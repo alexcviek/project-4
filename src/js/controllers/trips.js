@@ -30,7 +30,9 @@ function TripShowCtrl(Trip, $stateParams, $state) {
 TripNewCtrl.$inject = ['$state', 'Trip'];
 function TripNewCtrl($state, Trip){
   const vm = this;
-  vm.trip = {};
+  vm.trip = {
+    days: []
+  };
 
   function tripCreate(){
     if(vm.tripNewForm.$valid){
@@ -38,7 +40,11 @@ function TripNewCtrl($state, Trip){
       .save(vm.trip)
       .$promise
       .then(() => {
-        console.log(vm.trip.numberOfDays)
+        for (let i = 0; i <= vm.trip.numberOfDays; i++){
+          console.log(`Day number ${i}`);
+          console.log(vm.trip.days);
+          vm.trip.days.push({ number: i, date: new Date(), accomodation: false });
+        }
       })
       .then(() => {
         $state.go('tripsIndex');
