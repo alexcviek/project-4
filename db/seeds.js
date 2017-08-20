@@ -11,11 +11,33 @@ Trip
   .create([{
     name: 'India',
     departure: new Date(),
-    numberOfDays: 2
+    numberOfDays: 2,
+    days: [{
+      number: 1,
+      date: new Date(),
+      accomodation: true
+    }, {
+      number: 2,
+      date: new Date(),
+      accomodation: true
+    }]
   },{
     name: 'Russia',
     departure: new Date(),
-    numberOfDays: 3
+    numberOfDays: 3,
+    days: [{
+      number: 1,
+      date: new Date(),
+      accomodation: true
+    }, {
+      number: 2,
+      date: new Date(),
+      accomodation: true
+    },{
+      number: 3,
+      date: new Date(),
+      accomodation: false
+    }]
   },{
     name: 'Taiwan',
     departure: new Date(),

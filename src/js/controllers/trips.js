@@ -38,6 +38,9 @@ function TripNewCtrl($state, Trip){
       .save(vm.trip)
       .$promise
       .then(() => {
+        console.log(vm.trip.numberOfDays)
+      })
+      .then(() => {
         $state.go('tripsIndex');
       });
     }

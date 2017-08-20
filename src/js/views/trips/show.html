@@ -1,5 +1,6 @@
 <h2>{{ tripsShow.trip.name }}</h2>
 <p>{{ tripsShow.trip.departure }}</p>
 <p>{{ tripsShow.trip.numberOfDays }}</p>
+<p ng-repeat="day in tripsShow.trip.days">{{ day.number }}, {{ day.date }}, {{ day.accomodation }}</p>
 <button ng-click="tripsShow.delete()">Delete</button>
 <button ui-sref="tripsEdit({ id: tripsShow.trip.id })">Edit</button>
