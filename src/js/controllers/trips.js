@@ -40,11 +40,12 @@ function TripNewCtrl($state, Trip){
       .save(vm.trip)
       .$promise
       .then(() => {
-        for (let i = 0; i <= vm.trip.numberOfDays; i++){
+        for (let i = 1; i <= vm.trip.numberOfDays; i++){
           console.log(`Day number ${i}`);
           console.log(vm.trip.days);
           vm.trip.days.push({ number: i, date: new Date(), accomodation: false });
         }
+        Trip.save(vm.trip);
       })
       .then(() => {
         $state.go('tripsIndex');
