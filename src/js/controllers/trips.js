@@ -36,22 +36,19 @@ function TripNewCtrl($state, Trip){
 
   function tripCreate(){
     if(vm.tripNewForm.$valid){
+      for (let i = 1; i <= vm.trip.numberOfDays; i++){
+        vm.trip.days.push({ number: i, date: new Date(), accomodation: false });
+        console.log(`Day number ${i}`);
+      }
       Trip
       .save(vm.trip)
       .$promise
-      .then(() => {
-        for (let i = 1; i <= vm.trip.numberOfDays; i++){
-          console.log(`Day number ${i}`);
-          console.log(vm.trip.days);
-          vm.trip.days.push({ number: i, date: new Date(), accomodation: false });
-        }
-        Trip.save(vm.trip);
-      })
       .then(() => {
         $state.go('tripsIndex');
       });
     }
   }
+
   vm.create = tripCreate;
 }
 
